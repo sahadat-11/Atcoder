@@ -22,6 +22,7 @@ int main() {
   
   return 0;
 }
+//https://prnt.sc/OXZu_v1La2xv
 
 //In The Name of ALLAH
 #include<bits/stdc++.h>
@@ -73,6 +74,7 @@ int main() {
   
   return 0;
 }
+// https://prnt.sc/JTW9nBIo5PCX 
 
 //In The Name of ALLAH
 #include<bits/stdc++.h>

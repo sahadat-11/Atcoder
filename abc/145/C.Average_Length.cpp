@@ -117,5 +117,6 @@ int32_t main() {
   return 0;
 }
 // o(n * n);
+
 // https://prnt.sc/OIlhnv5XU91U
 // https://prnt.sc/RdzqP-nndXEi

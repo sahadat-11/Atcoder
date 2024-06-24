@@ -1,162 +1,52 @@
-// // //In The Name of ALLAH
-// // #include<bits/stdc++.h>
-// // using namespace std;
-// // #define ll long long
-// // const int N = 105;
-// // const ll inf = 1e11 + 7;
-// // int n, W, w[N], v[N];
-// // ll dp[N][N * 1000];
-// // ll f(int i, int total_value) {
-// //   if(i == n + 1) {
-// //     if(total_value == 0) return 0;
-// //     return inf;
-// //   }
-// //   ll &ans = dp[i][total_value];
-// //   if(ans != -1) return ans;
-// //   ans = f(i + 1, total_value);
-// //   ans = min(ans, w[i] + f(i + 1, total_value - v[i]));
-// //   return ans;
-// // }
-// // int main() {
-// //   ios_base::sync_with_stdio(0);
-// //   cin.tie(0);
-// //   memset(dp, -1, sizeof dp);
-// //   cin >> n >> W;
-// //   for(int i = 1; i <= n; i++) {
-// //     cin >> w[i] >> v[i];
-// //   }
-// //   int ans = 0;
-// //   for(int total_value = 1; total_value <= n * 1000; total_value++) {
-// //     if(f(1, total_value) <= W) {
-// //       ans = max(ans, total_value);
-// //     }
-// //   }
-// //   cout << ans << "\n";
-// //   return 0;
-// // }
+//In The Name of ALLAH
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+const int N = 105;
+const int inf = 1e11 + 7;
+int n, W, w[N], v[N];
+int dp[N][N * 1000];
 
+int func(int i, int total_value) {
+  if(i == n + 1) {
+    if(total_value == 0) return 0;
+    return inf;
+  }
+  int &ans = dp[i][total_value];
+  if(ans != -1) return ans;
+  ans = func(i + 1, total_value);
+  ans = min(ans, w[i] + func(i + 1, total_value - v[i]));
+  return ans;
+}
 
-// //In The Name of ALLAH
-// #include<bits/stdc++.h>
-// using namespace std;
-// #define ll long long
-// const int N = 105;
-// const ll inf = 1e11 + 7;
-// int n, W, w[N], v[N];
-// ll dp[N][N * 1000];
-// ll f(int i, int total_value) {
-//   if(i == n + 1) {
-//     if(total_value == 0) return 0;
-//     return inf;
-//   }
-//   ll &ans = dp[i][total_value];
-//   if(ans != -1) return ans;
-//   ans = f(i + 1, total_value);
-//   ans = min(ans, w[i] + f(i + 1, total_value - v[i]));
-//   return ans;
-// }
-// int main() {
-//   ios_base::sync_with_stdio(0);
-//   cin.tie(0);
-//   memset(dp, -1, sizeof dp);
-//   cin >> n >> W;
-//   for(int i = 1; i <= n; i++) {
-//     cin >> w[i] >> v[i];
-//   }
-//   int ans = 0;
-//   for(int total_value = 1; total_value <= n * 1000; total_value++) {
-//     if(f(1, total_value) <= W) {
-//       ans = max(ans, total_value);
-//     }
-//   }
-//   cout << ans << "\n";
-//   return 0;
-// }
+int32_t main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  memset(dp, -1, sizeof dp);
+  cin >> n >> W;
+  for(int i = 1; i <= n; i++) {
+    cin >> w[i] >> v[i];
+  }
+  int ans = 0;
+  for(int total_value = 1; total_value <= n * 1000; total_value++) {
+    if(func(1, total_value) <= W) {
+      ans = max(ans, total_value);
+    }
+  }
+  cout << ans << "\n";
+  return 0;
+}
 
-// //In The Name of ALLAH
-// #include<bits/stdc++.h>
-// using namespace std;
-// #define ll long long
-// const int N = 105;
-// const ll inf = 1e11 + 7;
-// int n, W, w[N], v[N];
-// ll dp[N][N * 1000];
-// ll f(int i, int total_value) {
-//   if(i == n + 1) {
-//     if(total_value == 0) return 0;
-//     return inf;
-//   }
-//   ll &ans = dp[i][total_value];
-//   if(ans != -1) return ans;
-//   ans = f(i + 1, total_value);
-//   ans = min(ans, w[i] + f(i + 1, total_value - v[i]));
-//   return ans;
-// }
-// int main() {
-//   ios_base::sync_with_stdio(0);
-//   cin.tie(0);
-//   memset(dp, -1, sizeof dp);
-//   cin >> n >> W;
-//   for(int i = 1; i <= n; i++) {
-//     cin >> w[i] >> v[i];
-//   }
-//   int ans = 0;
-//   for(int total_value = 1; total_value <= n * 1000; total_value++) {
-//     if(f(1, total_value) <= W) {
-//       ans = max(ans, total_value);
-//     }
-//   }
-//   cout << ans << "\n";
-//   return 0;
-// }
-
-
-// //In The Name of ALLAH
-// #include<bits/stdc++.h>
-// using namespace std;
-// #define ll long long
-// const int N = 105;
-// const ll inf = 1e11 + 7;
-// int n, W, w[N], v[N];
-// ll dp[N][N * 1000];
-// ll f(int i, int total_value) {
-//   if(i == 0) {
-//     if(total_value == 0) return 0;
-//     return inf;
-//   }
-//   ll &ans = dp[i][total_value];
-//   if(ans != -1) return ans;
-//   ans = f(i - 1, total_value);
-//   ans = min(ans, w[i] + f(i - 1, total_value - v[i]));
-//   return ans;
-// }
-// int main() {
-//   ios_base::sync_with_stdio(0);
-//   cin.tie(0);
-//   memset(dp, -1, sizeof dp);
-//   cin >> n >> W;
-//   for(int i = 1; i <= n; i++) {
-//     cin >> w[i] >> v[i];
-//   }
-//   int ans = 0;
-//   for(int total_value = 1; total_value <= n * 1000; total_value++) {
-//     if(f(n, total_value) <= W) {
-//       ans = max(ans, total_value);
-//     }
-//   }
-//   cout << ans << "\n";
-//   return 0;
-// }
 
 //In The Name of ALLAH
 #include<bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
 const int INF = 0x3f3f3f3f;
 const int N = 1e5 + 10;
 int n, capacity;
-ll dp[N];
-int main(){
+int dp[N];
+int32_t main(){
   ios::sync_with_stdio(0); cin.tie(0);
   cin >> n >> capacity;
   memset(dp, INF, sizeof dp);

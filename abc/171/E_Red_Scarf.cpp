@@ -1,7 +1,7 @@
 //In The Name of ALLAH
 #include<bits/stdc++.h>
 using namespace std;
-const int mod = 1e9 + 7;
+const int N = 1e5 + 7, mod = 1e9 + 7;
 #define int long long
 int32_t main() {
   ios_base::sync_with_stdio(0);
@@ -11,14 +11,13 @@ int32_t main() {
   for(int i = 0; i < n; i++) {
     cin >> a[i];
   }
-  sort(a.begin(), a.end());
-  int ans = 1;
+  int x = 0;
   for(int i = 0; i < n; i++) {
-  	ans = ans * (a[i] - i);
-  	ans %= mod;
+   x = (x ^ a[i]); 
   }
-  cout << ans << "\n";
+  //cout << x << "\n";
+  for(int i = 0; i < n; i++) {
+   cout << (x ^ a[i]) << " ";
+  }
   return 0;
 }
-
-// https://prnt.sc/7UDi7lEImMRi

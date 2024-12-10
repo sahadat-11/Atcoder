@@ -1,19 +1,19 @@
  //In The Name of ALLAH
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
-const ll MOD = 1e9 + 7;
-int main() {
+#define int long long
+const int MOD = 1e9 + 7;
+int32_t main() {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
-   ll n; cin >> n;
-   ll a[n];
+   int n; cin >> n;
+   int a[n];
     for(int i = 0; i < n; i++) cin >> a[i];
-    ll ans = 0;
-    for (ll base = 0; base <= 60; base++) {
-        ll mask = (1LL << base);
-        ll zeros = 0, ones = 0;
-        for(ll i = 0; i < n; i++) {
+    int ans = 0;
+    for (int bit = 0; bit <= 60; bit++) {
+        int mask = (1LL << bit);
+        int zeros = 0, ones = 0;
+        for(int i = 0; i < n; i++) {
             if (a[i] & mask) ones++;
             else zeros++;
         }
